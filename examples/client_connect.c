@@ -111,10 +111,10 @@ int main(int argc, char *argv[]) {
     UA_ClientConfig_setDefault(cc);
 #endif
 
-    //This overwrites heap-memory address with stack-memory address
-    //cc->securityPolicyUri = securityPolicyUri;
+    /*This overwrites heap-memory address with stack-memory address
+     *cc->securityPolicyUri = securityPolicyUri;*/
 
-    //Instead the above, use UA_String_copy. It allows '*config' to be freed
+    /*Instead the above, use UA_String_copy. It allows '*config' to be freed*/
     UA_String_copy(&securityPolicyUri,&cc->securityPolicyUri);
     cc->securityPolicyUri = securityPolicyUri;
 
